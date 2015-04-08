@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :tasks
+  resources :horses
   devise_for :users, controllers: {
         sessions: 'sessions'
       }
