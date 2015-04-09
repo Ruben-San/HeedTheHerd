@@ -1,2 +1,5 @@
 class HorsesController < ApplicationController
-end
+
+  def show
+  @horse= Horse.find(params[:id])
+  end
