@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 
   get 'users/show'
 
+  get 'horse/profile' => 'horse#profile', as: 'horse'
+
 
   resources :tasks
   resources :horses
