@@ -1,2 +1,8 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+#background_image {
+    background: url(/assets/pony.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
