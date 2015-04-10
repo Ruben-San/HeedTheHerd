@@ -1,2 +1,35 @@
-<h1>Users#profile</h1>
-<p>Find me in app/views/users/profile.html.erb</p>
+<button type="button">Add new horse</button>
+
+  <table class = 'table'>
+    <thead>
+      <tr>
+        <th>*Picture*</th>
+        <th>Name</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <h6> <!-- @projects.each do |project| --> </h6>
+        <tr>
+          <%= @user.horse.each do |horse| %>
+          <td> <%= horse.picture %> </td>
+          <td> <%= link_to "horse.name", "#" %></td>
+          <% end %>
+          
+          
+          <td>  
+            <div class="btn-group btn-group-xs">
+            
+              <h6> <!-- if user_signed_in? && current_user.id == project.user_id --> </h6>
+                <h5><!--  link_to  -->'Edit'<!-- , edit_project_path(project), class: "btn"  --></h5>
+                <h5><!--  link_to  -->'Delete'<!-- , project, data: { confirm: "Are you sure you wish to delete this project?" }, 
+                                             method: :delete, class: "btn"  --></h5>
+
+          
+              <h6><!--  end  --></h6>
+            </div>  
+          </td>
+        </tr>
+      <h6><!--  end  --></h6>
+    </tbody>
+  </table>
