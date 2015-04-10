@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'index' => 'static_pages#index', as: 'index'
+  get 'about' => 'static_pages#about', as: 'about'
+  get 'contact' => 'static_pages#contact', as: 'contact' 
+
   get 'users/profile'
 
   get 'users/index'
@@ -10,7 +14,7 @@ Rails.application.routes.draw do
   resources :tasks
   resources :horses
   devise_for :users, controllers: { sessions: 'users/sessions'}
-  root 'users#index'
+  root 'static_pages#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
