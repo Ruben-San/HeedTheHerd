@@ -1,0 +1,16 @@
+<%= @horse.name %>
+<%= @horse.breed %>
+<%= @horse.height%>
+<%= @horse.weight %>
+<%= @horse.DOB %>
+<%= @horse.RHR %>
+<%= @horse.gender %>
+
+<%= @horse.tasks.each do|task| %>
+<%= task.name%>
+<%= task.description %>
+<%= task.duedate %>
+<%= task.completed %>
+
+
+
