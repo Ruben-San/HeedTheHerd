@@ -13,6 +13,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise'
 gem 'faker'
 gem 'bootstrap-sass'
+gem 'better_errors'
+gem 'binding_of_caller'
 
 
 
