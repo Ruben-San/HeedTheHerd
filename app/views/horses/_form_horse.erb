@@ -10,7 +10,7 @@
     </div>
   <div class="field">
     <%= f.label :height%><br>
-    <%= f.number_field :height %>
+    <%= f.number_field :height, in: 1.0..20.0, step: 0.1%>
   </div>
   <div class="field">
     <%= f.label :DOB %><br>
@@ -23,7 +23,7 @@
 
   <div class="field">
     <%= f.label :gender %><br>
-     <%= f.select :catagory, %w{Mare Gelding Stallion}, :prompt => 'select', required: true, placeholder: 'Gender', class: 'form-control' %>
+     <%= f.select :gender, %w{Mare Gelding Stallion}, :prompt => 'select', required: true, placeholder: 'Gender', class: 'form-control' %>
   </div>
  <div class="field">
     <%= f.hidden_field :user_id, value: current_user.id %>

@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20150410214810) do
   create_table "horses", force: :cascade do |t|
     t.string   "name"
     t.string   "breed"
-    t.float    "height"
+    t.decimal  "height"
     t.integer  "weight"
     t.date     "DOB"
     t.integer  "RHR"
