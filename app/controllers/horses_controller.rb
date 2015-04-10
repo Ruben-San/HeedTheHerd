@@ -42,5 +42,4 @@ class HorsesController < ApplicationController
     end
     redirect_to horse_path
   end
-
 end
