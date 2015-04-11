@@ -1,4 +1,5 @@
 class HorsesController < ApplicationController
+  before_action :authenticate_user!
 
 
   def show
@@ -42,4 +43,11 @@ class HorsesController < ApplicationController
     #end
     #redirect_to horse_path
   end
+
+  private
+
+  def horse_params
+    params.require(:horse).permit(:name, :breed, :height, :weight, :DOB, :RHR, :gender, :user_id)
+end
+
 end
