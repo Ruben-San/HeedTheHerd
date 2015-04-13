@@ -4,13 +4,13 @@ Rails.application.routes.draw do
   get 'about' => 'static_pages#about', as: 'about'
   get 'contact' => 'static_pages#contact', as: 'contact' 
 
-  get 'users/profile'
+  get 'profile' => 'users#profile', as: 'profile'
 
   get 'users/index'
 
   get 'users/show'
 
-  get 'horse/profile' => 'horse#profile', as: 'horse'
+  get 'horses' => 'horses#profile', as: 'horses'
 
 
   resources :tasks
