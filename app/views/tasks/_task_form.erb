@@ -1,0 +1,29 @@
+
+
+<%= form_for @task do |f| %>
+
+  <div class="field">
+    <%= f.label :name%><br>
+    <%= f.select :name, %w{Ferrier Shots Coggins Wormer Dentist Other}, :prompt => 'Appointment type', required: true, placeholder: 'Catagory', class: 'form-control' %> 
+  </div>
+
+  <div class="field">
+     <%= f.label :description%><br>
+    <%= f.text_area :description%>
+    </div>
+
+  <div class="field">
+    <%= f.label :duedate %><br>
+    <%=f.date_select :duedate %>
+  </div>
+
+
+
+
+
+  
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
