@@ -1,4 +1,4 @@
 class Task < ActiveRecord::Base
-  belongs_to :horses
+  has_many :horses, through: :taskassociations
   
 end
