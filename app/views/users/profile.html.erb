@@ -3,7 +3,6 @@
   <table class = 'table'>
     <thead>
       <tr>
-        <th>*Picture*</th>
         <th>Name</th>
         <th></th>
       </tr>
@@ -11,11 +10,8 @@
     <tbody>
         <tr>
           <% if @user.horses.any? %>
-            <% @user.horses.each do |horse| %> 
-          
-
+            <% @user.horses.each do |horse| %>
             <td> <%= link_to horse.name, horse_path(horse) %> </td>
-            
             <td>  
               <div class="btn-group btn-group-xs">
                 <% if user_signed_in? && current_user.id == horse.user_id %>
