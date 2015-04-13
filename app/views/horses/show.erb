@@ -1,12 +1,16 @@
-<%= @horse.name %>
-<%= @horse.breed %>
-<%= @horse.height%>
-<%= @horse.weight %>
-<%= @horse.DOB %>
-<%= @horse.RHR %>
-<%= @horse.gender %>
+<ul>
+<li><%= image_tag @horse.pic.url(:thumb) %></li>
+<li><%= @horse.name %></li>
+<li><%= @horse.breed %></li>
+<li><%= @horse.height%></li>
+<li><%= @horse.weight %></li>
+<li><%= @horse.DOB %></li>
+<li><%= @horse.RHR %></li>
+<li><%= @horse.gender %></li>
+</ul>
 
-<%= @horse.tasks.each do|task| %>
+
+<% @horse.tasks.each do|task| %>
 <%= task.name%>
 <%= task.description %>
 <%= task.duedate %>
