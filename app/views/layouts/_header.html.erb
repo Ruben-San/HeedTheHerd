@@ -21,7 +21,6 @@
       <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in? %>
         <li><%= link_to "Profile", profile_path %></li>
-        <li><%= link_to "Horse", horses_path %></li>
         
         <% end %>
         <li class="dropdown">
@@ -29,8 +28,8 @@
           <ul class="dropdown-menu" role="menu">
             <% if user_signed_in? %>
 
-            <li><%= link_to "Sign_out", destroy_user_session_path, method: :delete
-            <li><%= link_to "Your Barn", users_profile_path %> %></li>
+            <li><%= link_to "Sign_out", destroy_user_session_path, method: :delete %></li>
+            <li><%= link_to "Your Barn", profile_path %></li>
             <% else %>
             <li><%= link_to "Sign up", new_user_registration_path %></li>
             <li><%= link_to "Sign in", new_user_session_path %></li>
