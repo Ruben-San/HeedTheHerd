@@ -15,6 +15,7 @@ gem 'faker'
 gem 'bootstrap-sass'
 gem 'better_errors'
 gem 'binding_of_caller'
+gem "paperclip", "~> 4.2"
 
 
 
