@@ -36,18 +36,16 @@ class HorsesController < ApplicationController
     end
   end
 
-  def delete
-     @horse =Horse.find(params[:id])
-    #if @horse.user == current_user
-    #@horse.destroy
-    #end
-    #redirect_to horse_path
+  def destroy 
+    @horse = Horse.find(params[:id])
+    @horse.destroy
+    redirect_to profile_path
   end
 
   private
 
   def horse_params
-    params.require(:horse).permit(:name, :breed, :height, :weight, :DOB, :RHR, :gender, :user_id)
+    params.require(:horse).permit(:name, :breed, :height, :weight, :DOB, :RHR, :gender, :user_id, :pic)
 end
 
 end

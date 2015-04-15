@@ -1,22 +1,24 @@
 <%= link_to "new horse", new_horse_path, class: "btn" %>
 <%= link_to "new task", new_task_path, class: "btn" %>
 
-  <table class = 'table'>
+  <table class="table">
     <thead>
       <tr>
-        <th>*Picture*</th>
         <th>Name</th>
         <th></th>
       </tr>
     </thead>
     <tbody>
-        <tr>
-          <% if @user.horses.any? %>
-            <% @user.horses.each do |horse| %> 
-          
+      
+      <% if @user.horses.any? %>
+        <% @user.horses.each do |horse| %> 
+         
+           <tr> 
+
+           <td><%= image_tag horse.pic.url(:thumb) %></td>
+
 
             <td> <%= link_to horse.name, horse_path(horse) %> </td>
-            
             <td>  
               <div class="btn-group btn-group-xs">
                 <% if user_signed_in? && current_user.id == horse.user_id %>
@@ -24,10 +26,10 @@
                 <%= link_to 'Delete', horse, data: { confirm: "Are you sure you wish to delete this horse?" }, 
                                                method: :delete, class: "btn" %>
                 <% end %>
-                <% end %> 
               </div>  
             </td>
-          <% end %>
-        </tr>
+          </tr>
+        <% end %> 
+      <% end %>
     </tbody>
   </table>

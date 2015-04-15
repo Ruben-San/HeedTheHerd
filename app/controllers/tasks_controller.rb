@@ -2,10 +2,13 @@ class TasksController < ApplicationController
   before_action :authenticate_user!
 
   def index
+
     @tasks = Task.all
   end
 
+
   def show
+    @task= Task.find(params[:id])
   end
 
   def new
@@ -58,7 +61,7 @@ class TasksController < ApplicationController
   
 
   def task_params
-    params.require(:task).permit(:name, :description, :duedate, :completed, :horse_id)
+    params.require(:task).permit(:name, :description, :duedate, :completed, :horse_id, :pic)
   end
 
 end
