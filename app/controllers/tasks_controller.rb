@@ -2,24 +2,34 @@ class TasksController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @tasks = Task
-  end  
- 
+
+    @tasks = Task.all
+  end
+
+
   def show
     @task= Task.find(params[:id])
   end
 
   def new
     @task = Task.new
+    @horses = current_user.horses.all
   end
 
   def create
-    @task= Link.new(task_params)
-    if @task.save
-      redirect_to @task
-    else
-      render :new
+    @horses = params[:task][:horses][:ids].reject!(&:blank?)
+    @horses.each do |horse|
+      @task = current_user.tasks.build(task_params)
+      @task.horse_id = horse.to_i
+      if
+        @task.save
+      else
+        break
+        render :new
+      end
     end
+      redirect_to profile_path
+    
   end
 
   def edit
