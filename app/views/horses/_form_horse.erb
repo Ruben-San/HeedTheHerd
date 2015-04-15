@@ -1,7 +1,7 @@
 
 
 <%= form_for @horse do |f| %>
-
+  <%= render 'devise/shared/error_messages', object: f.object %>
   <div class="field">
     <%= f.label :name%><br>
     <%= f.text_field :name%>  

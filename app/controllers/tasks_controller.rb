@@ -2,9 +2,11 @@ class TasksController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @tasks = Task.
-
+    @tasks = Task
+  end  
+ 
   def show
+    @task= Task.find(params[:id])
   end
 
   def new
@@ -53,4 +55,4 @@ class TasksController < ApplicationController
   end
 
 end
-end
+
