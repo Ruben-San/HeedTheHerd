@@ -17,6 +17,7 @@ gem 'better_errors'
 gem 'binding_of_caller'
 gem "paperclip", "~> 4.2"
 gem 'delayed_job_active_record'
+gem "httparty"
 
 
 
