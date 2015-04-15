@@ -5,7 +5,7 @@ class CreateTasks < ActiveRecord::Migration
       t.text :description
       t.date :duedate
       t.date :maildate
-      t.boolean :complete
+      t.boolean :complete, default: false
 
       t.timestamps null: false
     end
