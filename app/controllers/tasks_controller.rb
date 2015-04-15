@@ -10,16 +10,23 @@ class TasksController < ApplicationController
 
   def new
     @task = Task.new
+    @horses = current_user.horses.all
   end
 
   def create
-    @task= Task.new(task_params)
-
-    if @task.save
-      redirect_to profile_path
-    else
-      render :new
+    @horses = params[:task][:horses][:ids].reject!(&:blank?)
+    @horses.each do |horse|
+      @task = current_user.tasks.build(task_params)
+      @task.horse_id = horse.to_i
+      if
+        @task.save
+      else
+        break
+        render :new
+      end
     end
+      redirect_to profile_path
+    
   end
 
   def edit

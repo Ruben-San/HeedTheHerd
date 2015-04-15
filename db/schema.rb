@@ -32,8 +32,8 @@ ActiveRecord::Schema.define(version: 20150413215855) do
   add_index "horses", ["user_id"], name: "index_horses_on_user_id", using: :btree
 
   create_table "task_assignments", force: :cascade do |t|
-    t.integer  "horse"
-    t.integer  "task"
+    t.integer  "horse_id"
+    t.integer  "task_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
