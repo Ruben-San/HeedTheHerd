@@ -10,11 +10,11 @@ Rails.application.routes.draw do
 
   get 'users/show'
 
-  get 'horses' => 'horses#profile', as: 'horses'
+  # get 'horses' => 'horses#profile', as: 'horses'
 
 
   resources :tasks
-  resources :horses
+  resources :horses 
   devise_for :users, controllers: { sessions: 'users/sessions'}
   root 'static_pages#index'
   # The priority is based upon order of creation: first created -> highest priority.

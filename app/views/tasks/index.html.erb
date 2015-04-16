@@ -1,6 +1,11 @@
-<% @user.horse.tasks.each do|task| %>
-<%= task.name%>
-<%= task.description %>
-<%= task.duedate %>
-<%= task.completed %>
+<table class="table">
+<% @tasks.each do|task| %>
+<tr>
+<td><%= task.name%></td>
+<td><%= task.description %></td>
+<td><%= task.horse_id %></td>
+<td><%= task.duedate %></td>
+</tr>
 <% end %>
+
+</table>

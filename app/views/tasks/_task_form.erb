@@ -17,8 +17,10 @@
     <%=f.date_select :duedate %>
   </div>
 
-  <%= f.fields_for :horses do |h| %>
+  <%= f.fields_for :horses do |h| %>      
+
     <%= h.collection_check_boxes :ids, current_user.horses.all, :id, :name %>
+  
   <% end %>
 
   <div class="actions">
