@@ -4,21 +4,15 @@
   <table class="table">
     <thead>
       <tr>
-        <th></th>
         <th>Name</th>
         <th></th>
       </tr>
     </thead>
     <tbody>
-      
       <% if @user.horses.any? %>
         <% @user.horses.each do |horse| %> 
-         
            <tr> 
-
            <td><%= image_tag horse.pic.url(:thumb) %></td>
-
-
             <td> <%= link_to horse.name, horse_path(horse) %> </td>
             <td>  
               <div class="btn-group btn-group-xs">
@@ -35,36 +29,48 @@
     </tbody>
   </table>
 
-
-
+  <!-- Task table -->
   <table class = 'table'>
     <thead>
       <tr>
-        <th>Horse name</th>
+        <th>Horse Name</th>
+        <th>Appointment Type</th>
         <th>Description</th>
         <th>Due Date(Mountain Time)</th>
         <th></th>
       </tr>
     </thead>
     <tbody>
-      <% @assigned_tasks.each do |task| %>
-        <tr>
-          <td><%= task.name %></td>
-          <td><%= task.description %></td>
-          <td><%= task.due_date.strftime("%B %d, %Y, %I:%M %P") %></td>
+      <% @user.tasks.each_index do |index| %>
+        <% if index < 3 %>
+          <% task = @user.tasks[index] %>
+          <tr>
+            <td><%= task.horse_id %></td>
+            <td><%= task.name%></td>
+            <td><%= task.description %></td>
+            <td><%= task.duedate %></td> 
+            <td>
+
             <div class="btn-group btn-group-xs">
-              <% if current_user.id == task.assigned_user_id || current_user.id == task.user_id %>
-                <%= link_to 'Edit', edit_project_task_path(@project, task), class: "btn" %>
-                <%= link_to 'Delete', project_task_path(@project, task), data: { confirm: "Are you sure?" }, 
-                                               method: :delete, class: "btn" %>
-              <% end %>
+            <%= link_to 'Edit', edit_task_path(task), class: "btn" %>  
+            <%= link_to 'Delete', task, data: { confirm: "Are you sure you wish to delete this horse?" }, 
+                                                   method: :delete, class: "btn" %>
             </div>
-          </td>
-        </tr>
+            </td>  
+          </tr>
+        <% end %>
       <% end %>
     </tbody>
   </table>
 
 
 
-  
+
+
+
+
+
+
+
+
+
