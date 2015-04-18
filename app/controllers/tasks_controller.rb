@@ -3,9 +3,8 @@ class TasksController < ApplicationController
 
     
   def index
-     @tasks = Task.all
+     @tasks = Task.all.order(:duedate)
   end
-
 
   def show
     @task = Task.find(params[:id])
@@ -33,36 +32,28 @@ class TasksController < ApplicationController
   end
 
   def edit
-    if @task.user != current_user
-      redirect_to @link, notice: "You do not have permission to edit this task."
-    end
+    @task =Task.find(params[:id])
   end
 
   def update
+    @task = Task.find(params[:id])
     if @task.update(task_params)
-      redirect_to @task
+       redirect_to profile_path
     else
-      render :edit
+      render :edit 
     end
   end
 
-  def destroy
-    if @task.user == current_user
-      @task.destroy
-    else
-      redirect_to @user, notice: "You do not have permission to remove this task."
-    end
+  def destroy 
+    @task = Task.find(params[:id])
+    @task.destroy
+    redirect_to profile_path
   end
-
-  
 
   private
-
-  
 
   def task_params
     params.require(:task).permit(:name, :description, :duedate, :completed, :horse_id, :pic)
   end
 
 end
-
