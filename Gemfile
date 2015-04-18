@@ -19,7 +19,10 @@ gem "paperclip", "~> 4.2"
 gem 'delayed_job_active_record'
 gem "httparty"
 
-
+group :production do
+  gem 'puma'
+  gem 'rails_12factor', '0.0.2'
+end
 
 group :development, :test do
   gem 'byebug'
