@@ -19,6 +19,7 @@ gem "paperclip", "~> 4.2"
 gem 'delayed_job_active_record'
 gem 'daemons', '~> 1.2.2'
 gem 'daemon-spawn', '0.4.2'
+gem "httparty"
 
 
 
@@ -29,7 +30,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.0'
   gem 'pry-byebug'
   gem 'letter_opener'
-  
+  gem 'dotenv-rails'
 
 end
 
