@@ -1,16 +1,26 @@
-<div div class="pull-left">
-<%= image_tag @horse.pic.url(:medium) %>
-</div>
-<div class="tontainer">
-<ul>
-  <li><%= @horse.name %></li>
-  <li><%= @horse.breed %></li>
-  <li><%= @horse.height%></li>
-  <li><%= @horse.weight %></li>
-  <li><%= @horse.DOB %></li>
-  <li><%= @horse.RHR %></li>
-  <li><%= @horse.gender %></li>
-</ul>
+<h1><%= @horse.name %></h1>
+
+<div class="row">
+  <div class="col-xs-6 col-md-3">
+    <div div class="pull-left">
+    <%= image_tag @horse.pic.url(:medium) %>
+    </div>
+  </div>
+
+
+  <div class="col-xs12 col-md-9">
+    <div class="tontainer">
+      <ul>
+        <!-- <li><%= @horse.name %></li> -->
+        <li><%= @horse.breed %></li>
+        <li><%= @horse.height%></li>
+        <li><%= @horse.weight %></li>
+        <li><%= @horse.DOB %></li>
+        <li><%= @horse.RHR %></li>
+        <li><%= @horse.gender %></li>
+      </ul>
+    </div>
+  </div>
 </div>
 <table class="table">
   <% @horse.tasks.each do|task| %>
