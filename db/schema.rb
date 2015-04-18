@@ -40,9 +40,9 @@ ActiveRecord::Schema.define(version: 20150413202628) do
     t.text     "description"
     t.date     "duedate"
     t.date     "maildate"
-    t.boolean  "complete",    default: false
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
+    t.boolean  "complete"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
     t.integer  "horse_id"
   end
 
