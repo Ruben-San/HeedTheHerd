@@ -3,5 +3,5 @@ class Task < ActiveRecord::Base
   belongs_to :horses
 
   # accepts_nested_attributes_for :taskAssignments
-  
+  default_scope { order(:duedate) }
 end
