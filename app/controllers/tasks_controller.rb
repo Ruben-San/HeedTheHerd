@@ -20,6 +20,7 @@ class TasksController < ApplicationController
     @horses.each do |horse|
       @task = current_user.tasks.build(task_params)
       @task.horse_id = horse.to_i
+      @task.maildate = @task.duedate.weeks_ago(1)
       if
         @task.save
       else
@@ -53,7 +54,7 @@ class TasksController < ApplicationController
   private
 
   def task_params
-    params.require(:task).permit(:name, :description, :duedate, :completed, :horse_id, :pic)
+    params.require(:task).permit(:name, :description, :duedate, :completed, :horse_id, :pic, :maildate)
   end
 
 end
