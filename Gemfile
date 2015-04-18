@@ -28,6 +28,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.0'
   gem 'pry-byebug'
   gem 'letter_opener'
+  gem 'dotenv-rails'
 
 end
 
