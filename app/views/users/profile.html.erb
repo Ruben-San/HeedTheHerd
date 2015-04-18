@@ -41,12 +41,11 @@
       </tr>
     </thead>
     <tbody>
-      <% @user.tasks.each_index do |index| %>
-        <% if index < 3 %>
-          <% task = @user.tasks[index] %>
+      <% @tasks.each_with_index do |task, index| %>
+        
           <tr>
-            <td><%= task.horse_id %></td>
-            <td><%= task.name%></td>
+            <td><%= @horses[index].name %></td>
+            <td><%= task.name %></td>
             <td><%= task.description %></td>
             <td><%= task.duedate %></td> 
             <td>
@@ -59,7 +58,6 @@
             </td>  
           </tr>
         <% end %>
-      <% end %>
     </tbody>
   </table>
 
