@@ -11,7 +11,7 @@ class UserMailer < ApplicationMailer
     mail(to: @user.email, subject: 'Reminder of Horse event')
   end  
 
-  def weater_email(user)
+  def weather_email(user)
     @user = user
     mail(to: @user.email, subject: 'Chance of Rain')
   end  
