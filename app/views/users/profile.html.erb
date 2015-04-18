@@ -1,5 +1,5 @@
-<%= link_to "new horse", new_horse_path, class: "btn" %>
-<%= link_to "new task", new_task_path, class: "btn" %>
+<%= link_to "new horse", new_horse_path, class: "btn btn-default" %>
+<%= link_to "new task", new_task_path, class: "btn btn-default" %>
 
 <!-- Horse Table -->
   <table class="table">
@@ -18,9 +18,9 @@
             <td>  
               <div class="btn-group btn-group-xs">
                 <% if user_signed_in? && current_user.id == horse.user_id %>
-                <%= link_to 'Edit', edit_horse_path(horse), class: "btn" %>                
+                <%= link_to 'Edit', edit_horse_path(horse), class: "btn btn-default" %>                
                 <%= link_to 'Delete', horse, data: { confirm: "Are you sure you wish to delete this horse?" }, 
-                                               method: :delete, class: "btn" %>
+                                               method: :delete, class: "btn btn-default" %>
                 <% end %>
               </div>  
             </td>

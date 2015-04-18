@@ -11,6 +11,8 @@
 /log/*
 !/log/.keep
 /tmp
+/.env
 
 
 /db/schema.rb
+/public/system/*
