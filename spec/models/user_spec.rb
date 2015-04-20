@@ -3,4 +3,5 @@ require 'rails_helper'
     it 'is invalid withoout an email' do
       expect(build(:user, email: nil)).to_not be_valid
   end
+  
 end
