@@ -32,6 +32,7 @@ group :development, :test do
   gem 'letter_opener'
   gem 'dotenv-rails'
   gem 'factory_girl_rails'
+  gem 'simplecov', :require => false
 
 end
 
