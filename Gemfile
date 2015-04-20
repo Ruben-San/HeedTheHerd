@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-
+ruby '2.2.0'
 
 gem 'rails', '4.2.0'
 gem 'pg'
@@ -21,7 +21,10 @@ gem 'daemons', '~> 1.2.2'
 gem 'daemon-spawn', '0.4.2'
 gem "httparty"
 
-
+group :production do
+  gem 'puma'
+  gem 'rails_12factor', '0.0.2'
+end
 
 group :development, :test do
   gem 'byebug'
@@ -32,6 +35,7 @@ group :development, :test do
   gem 'letter_opener'
   gem 'dotenv-rails'
   gem 'factory_girl_rails'
+  gem 'simplecov', :require => false
 
 end
 

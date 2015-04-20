@@ -26,3 +26,6 @@ Things you may want to cover:
 
 Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
+
+open coverage/index.html (Terminal) -This will open in a browser.
+rspec spec (Terminal) -this will show you in the command line.
