@@ -17,6 +17,8 @@ gem 'better_errors'
 gem 'binding_of_caller'
 gem "paperclip", "~> 4.2"
 gem 'delayed_job_active_record'
+gem 'daemons', '~> 1.2.2'
+gem 'daemon-spawn', '0.4.2'
 gem "httparty"
 
 group :production do
@@ -32,6 +34,7 @@ group :development, :test do
   gem 'pry-byebug'
   gem 'letter_opener'
   gem 'dotenv-rails'
+  gem 'factory_girl_rails'
 
 end
 
