@@ -17,14 +17,15 @@ class Weathermanager
   end
 
   def weather_api_url
+    #when refactoring make into constant
     "http://api.worldweatheronline.com/free/v2/weather.ashx"
   end
 
   # to get #{ENV["API_KEY"] to work:
   # - bundle install
-  # - create .git file in Heedtheherd directory
+  # - create .env file in Heedtheherd directory
   # - type API_KEY = get secret key from nicole
-  # - go to .gitignore nad add .env
+  # - go to .gitignore and add .env
 
   #to make call to API Weathermanager.new.get_precipitation_chance(zipcode)
 end
