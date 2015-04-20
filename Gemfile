@@ -31,6 +31,7 @@ group :development, :test do
   gem 'pry-byebug'
   gem 'letter_opener'
   gem 'dotenv-rails'
+  gem 'factory_girl_rails'
 
 end
 
