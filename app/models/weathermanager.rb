@@ -1,4 +1,5 @@
 class Weathermanager
+
   def get_precipitation_chance(zipcode)
     query_string = build_query_string(zipcode)
     response = HTTParty.get(weather_api_url + "?" + query_string)
