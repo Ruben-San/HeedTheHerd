@@ -8,9 +8,9 @@ class ReminderEmailJob < ActiveJob::Base
         UserMailer.reminder_email(@user).deliver_later
       end
     end
-    self.class.perform_later(wait: RUN_EVERY)
+    
   end  
-
+self.class.perform_later(wait: RUN_EVERY)
 #check users maildate
 #if users.maildate is today send remider email
 #sent email reminder
