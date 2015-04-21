@@ -1,8 +1,8 @@
 class User < ActiveRecord::Base
   has_many :horses, dependent: :destroy
   has_many :tasks, through: :horses
-  validates :email, :encrypted_password, :zipcode, presence: true
-  after_create :send_welcome_email
+  validates :email, :password, presence: true
+  # validates_length_of :zipcode, :minimum => 5, :maximum => 10
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable

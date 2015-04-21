@@ -16,5 +16,6 @@ RSpec.describe User, type: :model do
 
     it 'it has a valid zip code' do
     expect(build(:user, zipcode: nil)).to_not be_valid
+    
   end
 end
