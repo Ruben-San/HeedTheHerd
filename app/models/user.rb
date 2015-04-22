@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   has_many :horses, dependent: :destroy
   has_many :tasks, through: :horses
-
+  validates :email, :password, :zipcode, presence: true
   after_create :send_welcome_email
   validates :zipcode, presence: true
 
