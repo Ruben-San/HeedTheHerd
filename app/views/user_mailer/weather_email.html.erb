@@ -1,1 +1,14 @@
-weather_email.thml.erb
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <!-- <img src="heed_the_herd_logo.png" alt="Logo"> -->
+    
+    <h1>Dear <%= @user.email, %></h1>
+    <p>
+      It looks like there is a (40%) chance of rain. It might be a good time to go out and blanket your horse(s).
+    </p>
+  </body>
+</html>

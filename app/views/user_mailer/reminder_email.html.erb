@@ -1,1 +1,14 @@
-reminder_email.html.erb
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <!-- <img src="heed_the_herd_logo.png" alt="Logo"> -->
+    
+    <h1>Dear <%= @user.email, %></h1>
+    <p>
+      This is just a reminder that (horse) needs to be scheduled for a (appointment type) in the upcoming week.
+    </p>
+  </body>
+</html>
