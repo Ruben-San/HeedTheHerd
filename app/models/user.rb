@@ -1,15 +1,15 @@
 class User < ActiveRecord::Base
   has_many :horses, dependent: :destroy
   has_many :tasks, through: :horses
-  validates :email, :password, :zipcode, presence: true
+  
   after_create :send_welcome_email
-  validates :zipcode, presence: true
-
+  
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-
+  # validates :zipcode, presence: true
+  # validates :email, :password, :zipcode, presence: true
 
 
   private
