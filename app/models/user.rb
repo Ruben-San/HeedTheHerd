@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   has_many :horses, dependent: :destroy
   has_many :tasks, through: :horses
-  validates :email, :password, :zipcode, presence: true
+  validates :email, :password, presence: true
   after_create :send_welcome_email
 
   # Include default devise modules. Others available are:
