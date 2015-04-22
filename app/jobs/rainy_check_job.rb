@@ -1,5 +1,5 @@
 class RainyCheckJob < ActiveJob::Base
-require 'Weathermanager'
+  require 'Weathermanager'
 
  include Delayed::RecurringJob
   run_every 1.day
