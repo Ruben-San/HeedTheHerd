@@ -12,11 +12,12 @@ Rails.application.routes.draw do
 
   # get 'horses' => 'horses#profile', as: 'horses'
 
-
   resources :tasks
   resources :horses 
   devise_for :users, controllers: { sessions: 'users/sessions'}
   root 'static_pages#index'
+
+  match "/delayed_job" => DelayedJobWeb, :anchor => false, via: [:get, :post]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
