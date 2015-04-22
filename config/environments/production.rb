@@ -1,4 +1,13 @@
 Rails.application.configure do
+
+  config.paperclip_defaults = {
+  :storage => :s3,
+  :s3_credentials => {
+    :bucket => ENV['S3_BUCKET_NAME'],
+    :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
+    :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
+  }
+}
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.
@@ -34,21 +43,24 @@ Rails.application.configure do
   # Asset digests allow you to set far-future HTTP expiration dates on all assets,
   # yet still be able to expire them through the digest params.
   config.assets.digest = true
+config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.delivery_method = :smtp
+  host = 'https://rocky-citadel-1798.herokuapp.com/'
+  config.action_mailer.default_url_options = { host: host }
+  ActionMailer::Base.smtp_settings = {
+    :address        => 'smtp.sendgrid.net',
+    :port           => '587',
+    :authentication => :plain,
+    :user_name      => ENV['SENDGRID_USERNAME'],
+    :password       => ENV['SENDGRID_PASSWORD'],
+    :domain         => 'heroku.com',
+    :enable_starttls_auto => true
+  }
+end
 
-  # config.action_mailer.delivery_method = :smtp
-
-  # config.action_mailer.smtp_settings = {
-  #   address: "smtp.gmail.com",
-  #   port: 587,
-  #   domain: '@gmail.com',
-  #   authentication: "plain",
-  #   enable_starttls_auto: true,
-  #   user_name: 'noreply',
-  #   password: 'password'
-  # }
 
   ###### This will need to be changed to the producti
-  # config.action_mailer.default_url_options = { host: 'https://cryptic-springs-7332.herokuapp.com/' }
+   
 
   # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
 
