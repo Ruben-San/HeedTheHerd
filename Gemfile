@@ -20,6 +20,8 @@ gem 'delayed_job_active_record'
 gem 'daemons', '~> 1.2.2'
 gem 'daemon-spawn', '0.4.2'
 gem "httparty"
+gem 'delayed_job_recurring'
+gem "delayed_job_web"
 
 group :production do
   gem 'puma'
