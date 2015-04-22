@@ -14,7 +14,7 @@ Rails.application.routes.draw do
 
   resources :tasks
   resources :horses 
-  devise_for :users, controllers: { sessions: 'users/sessions'}
+  devise_for :users, controllers: { sessions: 'users/sessions', registrations: 'users/registrations'}
   root 'static_pages#index'
 
   match "/delayed_job" => DelayedJobWeb, :anchor => false, via: [:get, :post]
