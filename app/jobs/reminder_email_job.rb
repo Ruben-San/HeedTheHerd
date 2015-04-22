@@ -1,14 +1,20 @@
 class ReminderEmailJob < ActiveJob::Base
-  RUN_EVERY = 1.minutes
+  include Delayed::RecurringJob
+  run_every 1.day
+  run_at '11:00am'
+  timezone 'US/Pacific'
+  queue 'reminder-jobs'
 
-  def perform(maildate)
+  def perform
     tasks = Task.all
     tasks.each do |task|
       if task.maildate == Date.today
+        horse = Horse.find(task.horse_id)
+        user = User.find(horse.user_id)
         UserMailer.reminder_email(@user).deliver_later
       end
     end
-    self.class.perform_later(wait: RUN_EVERY)
+    
   end  
 
 #check users maildate
