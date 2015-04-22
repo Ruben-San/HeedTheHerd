@@ -56,7 +56,6 @@ config.action_mailer.raise_delivery_errors = true
     :domain         => 'heroku.com',
     :enable_starttls_auto => true
   }
-end
 
 
   ###### This will need to be changed to the producti
