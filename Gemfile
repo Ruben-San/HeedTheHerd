@@ -26,6 +26,7 @@ gem "delayed_job_web"
 group :production do
   gem 'puma'
   gem 'rails_12factor', '0.0.2'
+  gem 'aws-sdk'
 end
 
 group :development, :test do
