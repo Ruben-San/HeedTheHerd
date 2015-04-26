@@ -22,6 +22,8 @@ gem 'daemon-spawn', '0.4.2'
 gem "httparty"
 gem 'delayed_job_recurring'
 gem "delayed_job_web"
+gem "chartkick"
+gem 'groupdate'
 
 group :production do
   gem 'puma'

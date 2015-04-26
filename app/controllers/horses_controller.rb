@@ -1,9 +1,9 @@
 class HorsesController < ApplicationController
   before_action :authenticate_user!
 
-
   def show
   @horse= Horse.find(params[:id])
+  @horse_weight = HorseWeight.all
   end
 
   def new
@@ -46,6 +46,6 @@ class HorsesController < ApplicationController
 
   def horse_params
     params.require(:horse).permit(:name, :breed, :height, :weight, :DOB, :RHR, :gender, :user_id, :pic)
-end
+  end
 
 end
