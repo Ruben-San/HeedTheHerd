@@ -5,8 +5,8 @@ Rails.application.configure do
   :storage => :s3,
   :s3_credentials => {
     :AWS_access_key_id => ENV['AWS_ACCESS_KEY_ID'],
-    :AWS_secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
-    :bucket => ENV["S3_BUCKET_NAME"]
+    :AWS_secret_access_key => ENV['AWS_SECRET_ACCESS_KEY'],
+    :bucket => ENV["S3_BUCKET_NAME"],
   }
 }
   # Settings specified here will take precedence over those in config/application.rb.
