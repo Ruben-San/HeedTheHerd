@@ -11,6 +11,6 @@ class Horse < ActiveRecord::Base
   default_scope { order(:name) }
 
   def s3_credentials
-    {:bucket => "#{ENV["bucket"]}", :access_key_id => "#{ENV["access_key_id"]}", :secret_access_key => "#{ENV["secret_access_key"]}"}
+    {:bucket => "#{ENV["bucket"]}", :AWS_access_key_id => "#{ENV["AWS_access_key_id"]}", :AWS_secret_access_key => "#{ENV["AWS_secret_access_key"]}"}
   end
 end
