@@ -22,7 +22,7 @@ gem 'daemon-spawn', '0.4.2'
 gem "httparty"
 gem 'delayed_job_recurring'
 gem "delayed_job_web"
-gem 'aws-sdk'
+gem 'aws-sdk', '<2.0'
 gem 'fog'
 
 group :production do
