@@ -3,9 +3,9 @@ class RainyCheckJob < ActiveJob::Base
 
  include Delayed::RecurringJob
   run_every 1.day
-  # run_at '11:00am'
+  run_at '11:00am'
   timezone 'US/Pacific'
-  # queue 'rainy-jobs'
+  queue 'rainy-jobs'
 
   def perform
     users = User.all
