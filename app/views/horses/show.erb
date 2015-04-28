@@ -8,14 +8,13 @@
     </div>
   </div>
 
-
   <div class="col-xs12 col-md-9">
     <div class="tontainer">
       <ul>
         <!-- <li><%= @horse.name %></li> -->
         <li><%= @horse.breed %></li>
         <li><%= @horse.height%></li>
-        <li><%= @horse.horse_weights.last.weight %></li>
+        <li><%= @horse.horse_weights.last.weight if @horse.horse_weights.any? %></li>
         <li><%= @horse.DOB %></li>
         <li><%= @horse.RHR %></li>
         <li><%= @horse.gender %></li>
@@ -35,18 +34,16 @@
   <% end %>
 </div>
 
-
 <div class="row">
 
   <!-- Line Chart - Single Series -->
-  <div class="col-xs-12">
+  <div class="col-xs-12 chartkicker">
     <h3>Weight</h3>
-    <%= line_chart @horse_weight.group("Created_at").maximum(:weight), {library: {hAxis: {title:"Time"}, vAxis: {title: "Weight"}}} %>
+    <% if @horse_weight %>
+      <%= line_chart @horse_weight.group("Created_at").maximum(:weight), {library: {hAxis: {title:"Time"}, vAxis: {title: "Weight"}}}  %>
+    <% end %>
   </div>
 
 </div>
 
-<%= link_to "Update Weight", { :controller => 'horse_weights', :action => 'new', :id => @horse.id }, class: "btn btn-default"%> 
-
-
-
+<%= link_to "Update Weight", { :controller => 'horse_weights', :action => 'new', :id => @horse.id }, class: "btn btn-default"%>
