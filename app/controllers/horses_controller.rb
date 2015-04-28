@@ -1,9 +1,12 @@
 class HorsesController < ApplicationController
   before_action :authenticate_user!
-
-
+  before_action :set_horse, only: [:show, :edit, :update, :destroy]
+  
   def show
-    @horse= Horse.find(params[:id])
+
+  @horse= Horse.find(params[:id])
+  @horse_weight = HorseWeight.where(horse_id: @horse.id)
+  # @horse_weight = [] if @horse_weight == nil
   end
 
   def new
@@ -23,7 +26,6 @@ class HorsesController < ApplicationController
     end  
 
   end
-
 
   def edit
     @horse =Horse.find(params[:id])
@@ -55,6 +57,11 @@ class HorsesController < ApplicationController
 
   def horse_params
     params.require(:horse).permit(:name, :breed, :height, :weight, :DOB, :RHR, :gender, :user_id, :pic)
-end
+  end
+
+  def set_horse
+    @horse = Horse.find(params[:id])
+  end
 
 end
+
