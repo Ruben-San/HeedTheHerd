@@ -1,0 +1,16 @@
+<%= form_for @horse_weight do |f| %>
+  <%= render 'devise/shared/error_messages', object: f.object %>  
+  <div class="field">
+    <%= f.label :weight %><br>
+    <%= f.number_field :weight %>
+  </div>
+
+  <div class="field">
+    <%= f.hidden_field :horse_id, value: @horse.id %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+
+<% end %>
