@@ -11,16 +11,14 @@ class RainyCheckJob < ActiveJob::Base
     users = User.all
       users.each do |user|
         weather = Weathermanager.new.get_precipitation_chance(user.zipcode)
-        answer = weather['data']['weather'].first['hourly'][0]['chanceofrain'].to_i
-        # rain = weather.get_precipitation_chance(user.zipcode)
-        # byebug
+                # rain = weather.get_precipitation_chance(user.zipcode)
         
+        answer = weather['data']['weather'].first['hourly'][0]['chanceofrain'].to_i
         if answer > 40
           UserMailer.weather_email(user).deliver_later
         end  
-    end
+      end
   end
-
 #get user zipcodes
 #call method to get api weather
 #go through response and get chance or rain
