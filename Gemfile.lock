@@ -361,6 +361,7 @@ DEPENDENCIES
   dotenv-rails
   factory_girl_rails
   faker
+  fog
   groupdate
   httparty
   jbuilder (~> 2.0)
