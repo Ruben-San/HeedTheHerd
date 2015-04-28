@@ -22,11 +22,13 @@ gem 'daemon-spawn', '0.4.2'
 gem "httparty"
 gem 'delayed_job_recurring'
 gem "delayed_job_web"
+gem 'aws-sdk', '<2.0'
+gem 'fog'
 
 group :production do
   gem 'puma'
   gem 'rails_12factor', '0.0.2'
-  gem 'aws-sdk'
+  
 end
 
 group :development, :test do
