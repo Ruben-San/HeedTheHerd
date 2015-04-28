@@ -11,7 +11,7 @@ class ReminderEmailJob < ActiveJob::Base
       if task.maildate == Date.today
         horse = Horse.find(task.horse_id)
         user = User.find(horse.user_id)
-        UserMailer.reminder_email(@user).deliver_later
+        UserMailer.reminder_email(user).deliver_later
       end
     end
     

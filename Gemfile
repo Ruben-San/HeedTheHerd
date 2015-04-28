@@ -16,17 +16,18 @@ gem 'better_errors'
 gem 'binding_of_caller'
 gem "paperclip", "~> 4.2"
 gem 'delayed_job_active_record'
-gem 'daemons', '~> 1.2.2'
-gem 'daemon-spawn', '0.4.2'
 gem "httparty"
 gem 'delayed_job_recurring'
 gem "delayed_job_web"
 gem "chartkick"
 gem 'groupdate'
+gem 'aws-sdk', '<2.0'
+gem 'fog'
 
 group :production do
   gem 'puma'
   gem 'rails_12factor', '0.0.2'
+  
 end
 
 group :development, :test do
@@ -39,6 +40,4 @@ group :development, :test do
   gem 'dotenv-rails'
   gem 'factory_girl_rails'
   gem 'simplecov', :require => false
-
 end
-
