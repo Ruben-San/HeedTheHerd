@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+ 
+
   get 'index' => 'static_pages#index', as: 'index'
   get 'about' => 'static_pages#about', as: 'about'
   get 'contact' => 'static_pages#contact', as: 'contact' 
@@ -11,7 +13,7 @@ Rails.application.routes.draw do
   get 'users/show'
 
   # get 'horses' => 'horses#profile', as: 'horses'
-
+  resources :horse_weights
   resources :tasks
   resources :horses 
   devise_for :users, controllers: { sessions: 'users/sessions', registrations: 'users/registrations'}

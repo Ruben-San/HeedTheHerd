@@ -15,7 +15,7 @@
         <!-- <li><%= @horse.name %></li> -->
         <li><%= @horse.breed %></li>
         <li><%= @horse.height%></li>
-        <li><%= @horse.weight %></li>
+        <li><%= @horse.horse_weights.last.weight %></li>
         <li><%= @horse.DOB %></li>
         <li><%= @horse.RHR %></li>
         <li><%= @horse.gender %></li>
@@ -35,22 +35,18 @@
   <% end %>
 </div>
 
+
 <div class="row">
 
   <!-- Line Chart - Single Series -->
   <div class="col-xs-12">
     <h3>Weight</h3>
-    <%= line_chart @horse_weight.group_by_month(:date, last: 24).count, :min => 0, :max => 2500 %>
+    <%= line_chart @horse_weight.group("Created_at").maximum(:weight), {library: {hAxis: {title:"Time"}, vAxis: {title: "Weight"}}} %>
   </div>
 
 </div>
 
-
-
-
-
-
-
+<%= link_to "Update Weight", { :controller => 'horse_weights', :action => 'new', :id => @horse.id }, class: "btn btn-default"%> 
 
 
 

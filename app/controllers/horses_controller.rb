@@ -19,7 +19,6 @@ class HorsesController < ApplicationController
     end  
   end
 
-
   def edit
     @horse =Horse.find(params[:id])
      #if @product.user != current_user
