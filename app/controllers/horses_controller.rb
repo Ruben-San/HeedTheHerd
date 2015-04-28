@@ -21,6 +21,7 @@ class HorsesController < ApplicationController
     else
       render :new
     end  
+
   end
 
 
@@ -29,6 +30,10 @@ class HorsesController < ApplicationController
      #if @product.user != current_user
       #redirect_to products_path
     #end
+      respond_to do |format|
+        format.html
+        format.js
+      end  
   end
 
   def update
