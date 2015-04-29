@@ -21,7 +21,7 @@
     <tr>
     <td> <%= weight.weight %> </td>
     <td> <%= weight.created_at %></td>
-    <td> <%= link_to 'Delete', horse_weight_path(@horse, weight), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-danger" %> </td>
+    <td> <%= link_to 'Delete', delete_path(@horse, weight), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-danger" %> </td>
     </tr>
   <% end %>
 </div>

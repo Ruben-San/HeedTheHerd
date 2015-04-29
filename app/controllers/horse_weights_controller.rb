@@ -1,6 +1,5 @@
 class HorseWeightsController < ApplicationController
-before_action :set_horse, except: :create
-#before_action :set_horse_weight , only: [:destroy]
+before_action :set_horse, except: [:create, :destroy]
 
   def index
 
@@ -26,13 +25,13 @@ before_action :set_horse, except: :create
   end
 
   def destroy
-    @horse_weight = @horse.horse_weights.find(params[:id])
-    if current_user.id == @horse.user_id
+    @horse_weight = HorseWeight.find(params[:id])
+    # if current_user.id == @horse.user_id
     @horse_weight.destroy
-    redirect_to profile_path
-  else
-    redirect_to profile_path
-   end
+      redirect_to profile_path
+    #else
+     #redirect_to profile_path
+    #end
   end
 
   private
@@ -44,13 +43,4 @@ before_action :set_horse, except: :create
   def set_horse
     @horse = Horse.find(params[:id])
   end
-
-  def set_horse_weight
-    @horse_weight = HorseWeight.find(params[:horse_id][:id])
-  end
 end
-
-
-
-
-
