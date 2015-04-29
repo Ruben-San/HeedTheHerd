@@ -2,7 +2,6 @@ class HorseWeightsController < ApplicationController
 before_action :set_horse, except: [:create, :destroy]
 
   def index
-
   end
 
   def show
@@ -17,7 +16,7 @@ before_action :set_horse, except: [:create, :destroy]
     @horse_weight = HorseWeight.new(horse_weights_params)
       if @horse_weight.save
       flash[:success] = "Weight updated"
-      redirect_to profile_path
+      redirect_to(:back)
     else
       flash[:danger] = "Please fill in the field."
       render :new
@@ -28,7 +27,7 @@ before_action :set_horse, except: [:create, :destroy]
     @horse_weight = HorseWeight.find(params[:id])
     # if current_user.id == @horse.user_id
     @horse_weight.destroy
-      redirect_to profile_path
+      redirect_to(:back)
     #else
      #redirect_to profile_path
     #end
