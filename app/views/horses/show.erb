@@ -46,4 +46,22 @@
 
 </div>
 
-<%= link_to "Update Weight", { :controller => 'horse_weights', :action => 'new', :id => @horse.id }, class: "btn btn-default"%>
+<%= link_to "Update Weight", { :controller => 'horse_weights', :action => 'new', :id => @horse.id }, remote: true, class: "btn btn-default"%>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">New</h4>
+      </div>
+      <div class="modal-body">
+      </div>
+<!--       <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div> -->
+    </div>
+  </div>
+</div> 

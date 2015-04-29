@@ -4,6 +4,10 @@ before_action :set_horse_weight , only: [:destroy]
 
   def new
     @horse_weight = HorseWeight.new
+    respond_to do |format|
+        format.html
+        format.js
+    end     
   end
 
   def create
