@@ -24,7 +24,7 @@ class HorseWeightsController < ApplicationController
     @horse_weight = HorseWeight.new(horse_weights_params)
       if @horse_weight.save
       flash[:success] = "Weight updated"
-      redirect_to horse_path(@horse_weight.horse_id)
+      redirect_to horse_path(@horse_weight.horse_id) 
     else
       flash[:danger] = "Please fill in the field."
       render :new
