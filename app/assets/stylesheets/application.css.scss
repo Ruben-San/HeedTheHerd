@@ -132,6 +132,15 @@ a:active {
 }
 
 /* About Page */
+.row1{ 
+  display: table-row;
+}
+.list-left{
+  float: left;
+}
+.list-right{
+  float: right; 
+}
 .column-left{ 
   float: left;
   width: 31%; 
