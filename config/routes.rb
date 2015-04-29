@@ -13,6 +13,7 @@ Rails.application.routes.draw do
 
   get 'users/show'
 
+  delete 'horses/:horse_id/horse_weights/:id' => 'horse_weights#destroy', as: 'delete'
   # get 'horses' => 'horses#profile', as: 'horses'
   resources :horse_weights
   resources :tasks
