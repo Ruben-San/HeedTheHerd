@@ -130,3 +130,33 @@ a:hover {
 a:active {
     color: #777;
 }
+
+/* About Page */
+.row1{ 
+  display: table-row;
+}
+.list-left{
+  float: left;
+}
+.list-right{
+  float: right; 
+}
+.column-left{ 
+  float: left;
+  width: 31%; 
+  margin: 1%; 
+  margin-top: 30px;
+}
+.column-right{ 
+  float: right; 
+  width: 31%; 
+  margin: 1%; 
+  margin-top: 30px;
+}
+.column-center{
+ display: inline-block; 
+ width: 31%; 
+ margin: 1%; 
+ margin-top: 30px;
+}
+

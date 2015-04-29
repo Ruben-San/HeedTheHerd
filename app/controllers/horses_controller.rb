@@ -3,6 +3,7 @@ class HorsesController < ApplicationController
   # before_action :set_horse, only: [:show, :edit, :update, :destroy]
   
   def show
+
   @horse= Horse.find(params[:id])
   @horse_weight = HorseWeight.where(horse_id: @horse.id)
   # @horse_weight = [] if @horse_weight == nil
@@ -10,6 +11,10 @@ class HorsesController < ApplicationController
 
   def new
     @horse = Horse.new
+      respond_to do |format|
+        format.html
+        format.js
+      end  
   end
 
   def create
@@ -19,6 +24,7 @@ class HorsesController < ApplicationController
     else
       render :new
     end  
+
   end
 
   def edit
@@ -26,6 +32,10 @@ class HorsesController < ApplicationController
      #if @product.user != current_user
       #redirect_to products_path
     #end
+      respond_to do |format|
+        format.html
+        format.js
+      end  
   end
 
   def update

@@ -12,6 +12,11 @@ class TasksController < ApplicationController
   def new
     @task = Task.new
     @horses = current_user.horses.all
+    respond_to do |format|
+      format.html
+      format.js
+    end 
+
   end
 
   def create
@@ -33,6 +38,11 @@ class TasksController < ApplicationController
 
   def edit
     @task =Task.find(params[:id])
+    respond_to do |format|
+        format.html
+        format.js
+    end     
+
   end
 
   def update

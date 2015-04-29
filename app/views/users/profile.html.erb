@@ -25,7 +25,7 @@
 
                   <div class="btn-group btn-group-xs">
                   <%= link_to 'Edit', edit_task_path(task), class: "btn btn-default" %>  
-                  <%= link_to 'Delete', task, data: { confirm: "Are you sure you wish to delete this task?" }, 
+                  <%= link_to 'Delete', task, data: { confirm: "Are you sure you wish to delete this task?" },
                                                          method: :delete, class: "btn btn-default" %>
                   </div>
                   </td>  
@@ -33,11 +33,29 @@
               <% end %>
           </tbody>
         </table>
-      </div>
-      <%= link_to "new horse", new_horse_path, class: "btn btn-default" %>
-<%= link_to "new task", new_task_path, class: "btn btn-default" %>
 
+      </div>
+      <%= link_to "new horse", new_horse_path, remote: true, class: "btn btn-default" %>
+      <%= link_to "new task", new_task_path, remote: true, class: "btn btn-default" %>
+      </div>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">New</h4>
+      </div>
+      <div class="modal-body">
+      </div>
+<!--       <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div> -->
+    </div>
   </div>
+</div>      
 
     <!-- Horse Table -->
   <div class="col-xs-6 col-md-4">
@@ -58,7 +76,7 @@
               <td>  
                 <div class="btn-group btn-group-xs">
                   <% if user_signed_in? && current_user.id == horse.user_id %>
-                  <%= link_to 'Edit', edit_horse_path(horse), class: "btn btn-default" %>                
+                  <%= link_to 'Edit', edit_horse_path(horse), remote: true, class: "btn btn-default" %>                
                   <%= link_to 'Delete', horse, data: { confirm: "Are you sure you wish to delete this horse?" }, 
                                                  method: :delete, class: "btn btn-default" %>
                   <% end %>

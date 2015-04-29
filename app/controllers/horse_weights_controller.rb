@@ -10,7 +10,14 @@ class HorseWeightsController < ApplicationController
 
   def new
     @horse_weight = HorseWeight.new
+
     @horse = Horse.find(params[:id])
+
+    respond_to do |format|
+        format.html
+        format.js
+    end     
+
   end
 
   def create

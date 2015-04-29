@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
 
- 
+ get 'contact' => 'messages#new', as: 'contact'
+  post 'contact' => 'messages#create'
 
   get 'index' => 'static_pages#index', as: 'index'
   get 'about' => 'static_pages#about', as: 'about'
-  get 'contact' => 'static_pages#contact', as: 'contact' 
+  #get 'contact' => 'static_pages#contact', as: 'contact' 
 
   get 'profile' => 'users#profile', as: 'profile'
 
