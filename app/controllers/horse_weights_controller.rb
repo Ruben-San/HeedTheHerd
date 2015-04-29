@@ -14,7 +14,7 @@ before_action :set_horse_weight , only: [:destroy]
     @horse_weight = HorseWeight.new(horse_weights_params)
       if @horse_weight.save
       flash[:success] = "Weight updated"
-      redirect_to profile_path
+      redirect_to :back
     else
       flash[:danger] = "Please fill in the field."
       render :new
