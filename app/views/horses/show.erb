@@ -1,3 +1,4 @@
+<%= javascript_include_tag "http://www.google.com/jsapi", "chartkick" %>
 <h1><%= @horse.name %></h1>
 
 <div class="row">
@@ -7,28 +8,60 @@
     </div>
   </div>
 
-
   <div class="col-xs12 col-md-9">
     <div class="tontainer">
       <ul>
         <!-- <li><%= @horse.name %></li> -->
         <li><%= @horse.breed %></li>
         <li><%= @horse.height%></li>
-        <li><%= @horse.weight %></li>
+        <li><%= @horse.horse_weights.last.weight if @horse.horse_weights.any? %></li>
         <li><%= @horse.DOB %></li>
         <li><%= @horse.RHR %></li>
         <li><%= @horse.gender %></li>
       </ul>
     </div>
   </div>
+</div>  
+
+<div class="row">
+  <table class="table">
+    <% @horse.tasks.each do|task| %>
+    <tr>
+    <td><%= task.name%></td>
+    <td><%= task.description %></td>
+    <td><%= task.duedate %></td>
+    </tr>
+  <% end %>
 </div>
-<table class="table">
-  <% @horse.tasks.each do|task| %>
-  <tr>
-  <td><%= task.name%></td>
-  <td><%= task.description %></td>
-  <td><%= task.duedate %></td>
-  </tr>
-<% end %>
 
+<div class="row">
 
+  <!-- Line Chart - Single Series -->
+  <div class="col-xs-12 chartkicker">
+    <h3>Weight</h3>
+    <% if @horse_weight %>
+      <%= line_chart @horse_weight.group("Created_at").maximum(:weight), {library: {hAxis: {title:"Time"}, vAxis: {title: "Weight"}}}  %>
+    <% end %>
+  </div>
+
+</div>
+
+<%= link_to "Update Weight", { :controller => 'horse_weights', :action => 'new', :id => @horse.id }, remote: true, class: "btn btn-default"%>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">New</h4>
+      </div>
+      <div class="modal-body">
+      </div>
+<!--       <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div> -->
+    </div>
+  </div>
+</div> 
