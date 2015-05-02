@@ -1,4 +1,23 @@
-<a href="http://www.heedtheherd.com/"><%= image_tag("heed_the_herd_logo.png") %><br></a>
+<style type="text/CSS">
+  .notice {
+    color: black; 
+    text-align: right;
+    padding-right: 10px; 
+    position: relative;
+top: 60px;
+  }
+</style>
+
+<div class="row">
+  <div class="col-md-9">
+    <a href="http://www.heedtheherd.com/"><%= image_tag("heed_the_herd_logo.png") %><br></a>
+  </div>
+  <div class="col-md-3">
+        <p class="notice"><%= notice %></p>
+   <p class="alert"><%= alert %></p>
+  </div>
+</div>
+
 
 <nav class="navbar navbar-default" role="navigation" style="margin-top:5px;">
   <div class="container-fluid">
