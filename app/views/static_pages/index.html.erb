@@ -1,20 +1,61 @@
 <!DOCTYPE html>
 <html>
+<head>
+  <style type="text/CSS">
+  body {
+    background-image: url(/assets/indeximage2.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    z-index: 0;
+    background-color: #EAE7E5;
+    color: #EAE7E5;
+    background-position: center 85px;
+  }
+
+  .col-md-8{
+    text-align: center;
+    height: 100%;
+  }
+
+  .row.features {
+    margin-top: 360px;
+    color: #40353D;
+    text-align: center;
+  }
+  h1 {
+    font-size: 56px;
+  }
+  </style>
+
+</head>
 <body>
-  <div class="center jumbotron" >
-    <h1>Welcome to Heed the Herd</h1>
 
-    <h3>Making sure your horses don't die since 2015!</h3>
-
-      <% if user_signed_in? %>
+<div class="row">
+  <div class="col-md-8">
+        <h1>Welcome to Heed the Herd!</h1>
+    <h3>Making sure your horses don't die <br>since 2015!</h3>
+<!--           <% if user_signed_in? %>
         <%= link_to "Sign Out", destroy_user_session_path, class: "btn btn-default", method: :delete %>
       <% else %>
         <%= link_to "Sign up", new_user_registration_path, class: "btn btn-default"%> 
         <%= link_to "Sign in", new_user_session_path, class: "btn btn-default"%>
-      <% end %>
+      <% end %> -->
+  </div>
+  <div class="col-md-4"> </div>
+</div>
+
+<div class="row features">
+  <div class="col-xs-6 col-md-4"><i class="fa fa-tint fa-3x"></i><br> Rain alerts </div>
+  <div class="col-xs-6 col-md-4"><i class="fa fa-bell fa-3x"></i><br> Appointment reminder</div>
+  <div class="col-xs-6 col-md-4"><i class="fa fa-line-chart fa-3x"></i><br> Weight chart </div>
+</div>
+
+
+
+
+
 
     <div id="cover-all"></div>
-
   </div>
 </body>
 </html>
