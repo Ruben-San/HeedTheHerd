@@ -1,25 +1,24 @@
 <style type="text/CSS">
-  .notice {
-    color: black; 
-    text-align: right;
-    padding-right: 10px; 
-    position: relative;
-top: 60px;
+
+  .navbar.navbar-default {
+    margin-top: 0px;
+  }
+  .col-xs-10 {
+    width: 100%;
   }
 </style>
 
+
 <div class="row">
-  <div class="col-md-9">
-    <a href="http://www.heedtheherd.com/"><%= image_tag("heed_the_herd_logo.png") %><br></a>
-  </div>
-  <div class="col-md-3">
-        <p class="notice"><%= notice %></p>
-   <p class="alert"><%= alert %></p>
+  <div class="col-xs-10">
+  <a href="http://www.heedtheherd.com/"><img src="assets/heed_the_herd_logo.png" height="419" width="70"></a>
+</div>
+<div class="col-xs-2">
+<!--   <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p> --> 
   </div>
 </div>
-
-
-<nav class="navbar navbar-default" role="navigation" style="margin-top:5px;">
+<nav class="navbar navbar-default" role="navigation" >
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">

@@ -7,10 +7,7 @@ body {
     background:#EAE7E5;
     color: #3E363C;
   }
-.navbar.navbar-default {
-  margin-top: 50px;
-}
-
+  
 #cover-all {
   // background: url(/assets/indeximage.jpg); 
   width: 100%;
@@ -164,6 +161,9 @@ a:active {
  margin-top: 30px;
 }
 
-
+img {
+  width: 40%; 
+  height: 40%;
+}
 
 
