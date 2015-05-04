@@ -6,7 +6,6 @@ before(:each) do
  @horse= FactoryGirl.build(:horse)
  @horse_weight = FactoryGirl.create(:horse_weight)
 end
-
   
   describe 'POST #create' do
     context 'with valid attributes' do
@@ -32,5 +31,19 @@ end
       end
     end
   end
+<<<<<<< Updated upstream
  
+=======
+  describe "GET #new" do
+    it "returns http success" do
+      get :new
+      expect(response).to have_http_status(:success)
+    end
+  end
+
+  after(:each) do
+    ActiveRecord::Base.subclasses.each(&:delete_all)
+  end
+
+>>>>>>> Stashed changes
 end
