@@ -14,7 +14,7 @@
 
   <div class="field">
     <%= f.label "Due Date" %><br>
-    <%=f.date_field :duedate %>
+    <%=f.date_select :duedate, :start_year=>2015 %>
   </div>
 
   <%= f.fields_for :horses do |h| %>      
