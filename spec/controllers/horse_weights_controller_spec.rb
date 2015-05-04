@@ -31,19 +31,5 @@ end
       end
     end
   end
-<<<<<<< Updated upstream
- 
-=======
-  describe "GET #new" do
-    it "returns http success" do
-      get :new
-      expect(response).to have_http_status(:success)
-    end
-  end
 
-  after(:each) do
-    ActiveRecord::Base.subclasses.each(&:delete_all)
-  end
-
->>>>>>> Stashed changes
 end
