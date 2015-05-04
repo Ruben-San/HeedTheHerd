@@ -23,6 +23,7 @@ gem "chartkick"
 gem 'groupdate'
 gem 'aws-sdk', '<2.0'
 gem 'fog'
+gem 'font-awesome-sass', '~> 4.3.0'
 
 group :production do
   gem 'puma'
