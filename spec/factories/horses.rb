@@ -1,10 +1,15 @@
 FactoryGirl.define do
-  factory :horse do
-    name 'jerry'
-    breed 'Andalusian'
-    height 13.2
-    DOB {Date.today - rand(1000).days}
-    RHR 56
-    gender 'gelding'
+
+
+  factory :horse do |f|
+    f.name 'jerry'
+    f.breed 'Andalusian'
+    f.height 13.2
+    f.DOB {Date.today - rand(1000).days}
+    f.RHR 56
+    f.gender 'gelding'
+    f.association :user, :factory => :user
   end
+
+     
 end

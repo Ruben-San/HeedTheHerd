@@ -4,4 +4,12 @@ FactoryGirl.define do
     password 'password'
     zipcode 84102
   end
+
+
+
+
+trait :with_horse do
+  after(:create) {|instance| create_list(:horse, 1, user: instance) }
+  end
+
 end
