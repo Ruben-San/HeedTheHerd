@@ -2,13 +2,60 @@
 <html>
   <head>
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+      <style type="text/CSS">
+        body {
+            background: white; 
+            color:#463334; 
+            font-family:Arial, Helvetica, sans-serif; 
+            font-size:12px;
+
+          }
+          .container {
+            background: #EBE7E4;
+            padding: 20px;
+          }
+          .logo {
+            width: 100%;
+            padding-bottom: 20px;
+            padding-left: 10px;
+          }
+          .aptimage {
+            text-align: center;
+          }
+          .col-xs-8.col-sm-9 {
+            height: 100%;            
+          }
+          .col-xs-8.col-sm-12 {
+            text-align: center;
+          }
+          img {
+            max-width: 100%;
+          }
+      </style>
   </head>
-  <body>
-    <!-- <img src="heed_the_herd_logo.png" alt="Logo"> -->
-    
-    <h1>Dear <%= @user.email %></h1>
-    <p>
-      This is just a reminder that (horse) needs to be scheduled for a appoiment in the upcoming week.
-    </p>
-  </body>
+    <body>
+      <div class="container">
+        <div class="row">
+
+<!--           <div class="logo">
+            <%= image_tag("heed_the_herd_logo.png") %>
+          </div> -->
+              
+          <div class="aptimage">
+            
+          </div>
+
+
+          <div class="col-xs-8 col-sm-9">
+            <h4>  This is just a reminder that your horse(s) is scheduled for an appointment(s) in the upcoming week. Go to Heed the Herd for more information.</h4>
+          </div>
+
+          <div class="col-xs-8 col-sm-12">
+            <a href="http://heedtheherd.herokuapp.com/" target="_blank" class="btn btn-default">Go to Heed the Herd</a>
+          </div>
+
+        </div>
+      </div>
+    </body> 
 </html>
