@@ -38,7 +38,7 @@
         <li><a href="/contact">Contact</a></li>
         <li><a target="_blank" href="http://www.devpointlabs.com">DPL</a></li>
         <%if user_signed_in?%>
-        <li><a href="/contact">Your Barn</a></li>
+        <li><%= link_to "Your Barn", profile_path %></li>
         <% end %>
       
       </ul>
