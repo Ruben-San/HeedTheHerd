@@ -15,7 +15,7 @@ body {
   z-index: 0px;
   background-color: #EAE7E5;
   color: black;
-  background-position: center 94px;
+  background-position: center 0px;
   }
 
 .text {
@@ -66,8 +66,7 @@ body {
 }
 
 .tasks {
-  background:#6E4D51 !important;
-  color: #EAE7E5;
+  color: #6E4D51;
 }
 
   h1 { 
@@ -151,6 +150,12 @@ body {
     }
 }
 
+.navbar-brand {
+  height: 90px;
+  padding: 0px;
+  margin: 0px;
+}
+
 /* Links */
 /* unvisited link */
 a:link {
@@ -202,6 +207,6 @@ a:active {
 }
 
 img {
-  width: 40%; 
-  height: 40%;
+  width: 100%; 
+  height: auto;
 }
