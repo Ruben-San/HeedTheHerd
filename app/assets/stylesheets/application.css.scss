@@ -8,6 +8,16 @@ body {
     color: #3E363C;
   }
 
+#background {
+  background-image: url(/assets/indeximage2.jpg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  z-index: 0px;
+  background-color: #EAE7E5;
+  color: black;
+  background-position: center 94px;
+  }
+
 .text {
     font-size: 24px;
     color: #EAE7E5;
