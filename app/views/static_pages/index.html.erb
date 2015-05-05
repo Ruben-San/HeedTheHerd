@@ -30,29 +30,28 @@
 </head>
 <body>
 
-<div class="row">
-  <div class="col-md-8">
-    <div class="text">
-        <h1>Welcome to Heed the Herd!</h1>
-    <h3>Making sure your horses don't die <br>since 2015!</h3>
+  <div class="row">
+    <div class="col-md-8">
+      <div class="text">
+          <h1>Welcome to Heed the Herd!</h1>
+      <h3>Making sure your horses don't die <br>since 2015!</h3>
+      </div>
+            <% if user_signed_in? %>
+          <%= link_to "Sign Out", destroy_user_session_path, class: "btn btn-default", method: :delete %>
+        <% else %>
+          <%= link_to "Sign up", new_user_registration_path, class: "btn btn-default"%> 
+          <%= link_to "Sign in", new_user_session_path, class: "btn btn-default"%>
+        <% end %>
     </div>
-          <% if user_signed_in? %>
-        <%= link_to "Sign Out", destroy_user_session_path, class: "btn btn-default", method: :delete %>
-      <% else %>
-        <%= link_to "Sign up", new_user_registration_path, class: "btn btn-default"%> 
-        <%= link_to "Sign in", new_user_session_path, class: "btn btn-default"%>
-      <% end %>
+    <div class="col-md-4"> </div>
   </div>
-  <div class="col-md-4"> </div>
-</div>
 
-<div class="row features">
-  <div class="col-md-4"><i class="fa fa-tint fa-3x"></i><br> Rain alerts </div>
-  <div class="col-md-4"><i class="fa fa-bell fa-3x"></i><br> Appointment reminder</div>
-  <div class="col-md-4"><i class="fa fa-line-chart fa-3x"></i><br> Weight chart </div>
-</div>
-    <div id="cover-all"></div>
+  <div class="row features">
+    <div class="col-md-4"><i class="fa fa-tint fa-3x"></i><br> Rain alerts </div>
+    <div class="col-md-4"><i class="fa fa-bell fa-3x"></i><br> Appointment reminder</div>
+    <div class="col-md-4"><i class="fa fa-line-chart fa-3x"></i><br> Weight chart </div>
   </div>
+
 </body>
 </html>
 
