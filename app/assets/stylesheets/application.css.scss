@@ -2,6 +2,7 @@
 @import "bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+@import url(http://fonts.googleapis.com/css?family=Walter+Turncoat);
 
 body {
     background:#EAE7E5;
@@ -69,9 +70,14 @@ body {
   color: #6E4D51;
 }
 
-  h1 { 
+  h1 {
+    font-family: 'Walter Turncoat', cursive;
     font-size: 24px; 
     font-size: 2.4em; 
+  }
+  
+  h2 {
+    font-family: 'Walter Turncoat', cursive;
   }
 
 /* navbar */
