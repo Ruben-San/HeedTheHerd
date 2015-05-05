@@ -6,6 +6,10 @@ RSpec.describe TasksController, type: :controller do
 before(:each) do
   @user = FactoryGirl.create(:user)
   sign_in @user 
+  @horse = FactoryGirl.create(:horse)
+  @horse2 = FactoryGirl.create(:horse, id: 2)
+  @horse3 = FactoryGirl.create(:horse, id: 3)
+
  end
 
 
@@ -37,22 +41,35 @@ before(:each) do
     end
   end
   
-  describe "Post create" do 
-    it "adds a new task" do
-      # @horses = Horse.last.id
+  # describe "should create task for multiple horses simultaneously" do 
+  #    it "adds a new task" do
+     
+  #     all_horses = {horse: @horse, horse: @horse2, horse: @horse3}
+  #     @horses = all_horses.each do |horse|
+  #      horse.id
+  #    end
+  #     binding.pry
+  #     expect(@horses.count).to eq(3)
 
-     expect{
-       # @horses = params[:task][:horses][:ids].reject!(&:blank?)
-       @horse = Horse.first
-          post :create, {:task => @task, :horse_id => @horse.id}
-        }.to change(Task, :count).by(1)
-     end
+      # FactoryGirl.create(:task)
+      # expect(Task.count).to eq(1)
+     # end
 
+# @horses = params[:task][:horses][:ids].reject!(&:blank?)
+#     @horses.each do |horse|
+#       @task = current_user.tasks.build(task_params)
+#       @task.horse_id = horse.to_i
+#       @task.maildate = @task.duedate.weeks_ago(1)
+#       if @task.save
+#       else
+#         break
+#         render :new
+#       end
   
-    it 'redirects to the profile page on save' do
-      post :create, {:task_id => @task.id, :horse_id => @horse.id}
-      @task = assigns(:task)
-      expect(response).to redirect_to(profile_path)
-    end   
-  end
+    # it 'redirects to the profile page on save' do
+    #   post :create, {:task_id => @task.id, :horse_id => @horse.id}
+    #   @task = assigns(:task)
+    #   expect(response).to redirect_to(profile_path)
+    # end   
+  
 end  

@@ -1,4 +1,4 @@
-<%= javascript_include_tag "http://www.google.com/jsapi", "chartkick" %>
+<%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
 <h1><%= @horse.name %></h1>
 
 <div class="row">
@@ -38,7 +38,7 @@
 
   <!-- Line Chart - Single Series -->
   <div class="col-xs-12 chartkicker">
-    <h3>Weight</h3>
+    <h2>Weight</h2>
     <% if @horse_weight %>
       <%= line_chart @horse_weight.group("Created_at").maximum(:weight), {library: {hAxis: {title:"Time"}, vAxis: {title: "Weight"}}}  %>
     <% end %>

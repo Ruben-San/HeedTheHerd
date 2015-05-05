@@ -25,8 +25,7 @@ class TasksController < ApplicationController
       @task = current_user.tasks.build(task_params)
       @task.horse_id = horse.to_i
       @task.maildate = @task.duedate.weeks_ago(1)
-      if
-        @task.save
+      if @task.save
       else
         break
         render :new
