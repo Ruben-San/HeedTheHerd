@@ -2,6 +2,7 @@
 
   .navbar.navbar-default {
     margin-top: 0px;
+    height: auto;
   }
   .col-xs-10 {
     width: 100%;
@@ -10,9 +11,9 @@
 
 
 <div class="row">
-  <div class="col-xs-10">
+<!--   <div class="col-xs-10">
     <%= image_tag("heed_the_herd_logo.png") %><br>
-</div>
+</div> -->
 <div class="col-xs-2">
 <!--   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p> --> 
@@ -28,7 +29,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="/">Heed the Herd</a>
+      <a class="navbar-brand" href="/"><%= image_tag("heed_the_herd_logo.png") %><br></a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
