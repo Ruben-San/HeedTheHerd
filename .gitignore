@@ -16,5 +16,5 @@
 
 /db/schema.rb
 /public/system/*
-coverage
-coverage.data
+/coverage
+/coverage.data

@@ -13,7 +13,6 @@ RSpec.describe Horse, type: :model do
     expect(build(:horse, DOB: nil)).to_not be_valid
     expect(build(:horse, RHR: nil)).to_not be_valid
     expect(build(:horse, height: nil)).to_not be_valid
-    expect(build(:horse, weight: nil)).to_not be_valid
     expect(build(:horse, gender: nil)).to_not be_valid
   end
 end
