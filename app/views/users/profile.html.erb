@@ -13,7 +13,8 @@ body {
   .col-xs-11.col-md-7 {
     background: rgba(234, 231, 229, 0.7);
     margin: 5px;
-    width:;
+    padding-bottom: 10px;
+    min-height: 300px;
     
   }
 
@@ -21,6 +22,7 @@ body {
     background: rgba(234, 231, 229, 0.7);
     margin: 5px;
     color: #6E4D51;
+    padding-bottom: 20px;
   }
 
 
@@ -63,8 +65,9 @@ body {
         </table>
 
       </div>
-      <%= link_to "new horse", new_horse_path, remote: true, class: "btn btn-default" %>
-      <%= link_to "new task", new_task_path, remote: true, class: "btn btn-default" %>
+      <center>
+      <%= link_to "New Appointment", new_task_path, remote: true, class: "btn btn-default" %>
+      </center>
       </div>
 
 <!-- Modal -->
@@ -116,5 +119,8 @@ body {
         <% end %>
       </tbody>
     </table>
+    <center>
+    <%= link_to "New Horse", new_horse_path, remote: true, class: "btn btn-default" %>
+    </center>
    </div>
 </div>  
