@@ -1,72 +1,106 @@
 <%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
-<h1><%= @horse.name %></h1>
 
+<style type="text/css">
+  body {
+    background-image: url(/assets/06.jpg);
+    background-repeat: repeat-y;
+    background-size: 100%;
+    background-color: #EAE7E5;
+    background-position: center 0px;
+    color: #40353D;
+    }
 
+    .col-md-3 {
+      background: rgba(234, 231, 229, 0.7);
+      margin: 5px;
+      min-height: 420px;
+    }
 
+    .col-md-8 {
+      background: rgba(234, 231, 229, 1.0);
+      margin: 5px;
+      min-height: 420px;
+    }
 
+    .col-md-3 li {
+      list-style-type: none;
+    }
+    .col-md-11 {
+      background: rgba(234, 231, 229, 0.7);
+      margin: 5px;
+      min-height: 200px;
+    }
+</style>
 
-<div class="row">
-  <div class="col-xs-6 col-md-3">
-    <div div class="pull-left">
-    <%= image_tag @horse.pic.url(:medium) %>
-    </div>
-  </div>
-
-  <div class="col-xs12 col-md-9">
-    <div class="container">
+<div class="container">
+  <div class="row">
+  <div class="col-md-3">
+      <h1><%= @horse.name %></h1>
+        <%= image_tag @horse.pic.url(:medium) %>
       <ul>
-        <!-- <li><%= @horse.name %></li> -->
-        <li><%= @horse.breed %></li>
-        <li><%= @horse.height%></li>
-        <li><%= @horse.horse_weights.last.weight if @horse.horse_weights.any? %></li>
-        <li><%= @horse.DOB %></li>
-        <li><%= @horse.RHR %></li>
-        <li><%= @horse.gender %></li>
+        <li>Breed: <%= @horse.breed %></li>
+        <li>Height: <%= @horse.height%></li>
+        <li>Weight: <%= @horse.horse_weights.last.weight if @horse.horse_weights.any? %></li>
+        <li>Date of Birth: <%= @horse.DOB %></li>
+        <li>Resting Heart Rate: <%= @horse.RHR %></li>
+        <li>Gender: <%= @horse.gender %></li>
       </ul>
-    </div>
   </div>
-</div>  
 
-<div class="row">
-  <table class="table">
-    <% @horse.tasks.each do|task| %>
-    <tr>
-    <td><%= task.name%></td>
-    <td><%= task.description %></td>
-    <td><%= task.duedate %></td>
-    </tr>
-  <% end %>
-</div>
-
-<div class="row">
-
-  <!-- Line Chart - Single Series -->
-  <div class="col-xs-12 chartkicker">
+  <div class="col-md-8">
     <h2>Weight</h2>
     <% if @horse_weight %>
       <%= line_chart @horse_weight.group("Created_at").maximum(:weight), {library: {hAxis: {title:"Time"}, vAxis: {title: "Weight"}}}  %>
-    <% end %>
+    <% end %> 
+    <center>
+      <%= link_to "Update Weight", { :controller => 'horse_weights', :action => 'new', :id => @horse.id }, remote: true, class: "btn btn-default"%>
+      <!-- Modal -->
+      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title" id="myModalLabel">HtH</h4>
+            </div>
+            <div class="modal-body">
+            </div>
+      <!--       <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div> -->
+          </div>
+        </div>
+      </div>
+    </center>
+  </div>
   </div>
 
-</div>
-
-<%= link_to "Update Weight", { :controller => 'horse_weights', :action => 'new', :id => @horse.id }, remote: true, class: "btn btn-default"%>
-
-<!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">HtH</h4>
-      </div>
-      <div class="modal-body">
-      </div>
-<!--       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div> -->
+  <div class="row">
+    <div class="col-md-11"> 
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Horse</th>
+            <th>Appointment</th>
+            <th>DueDate</th>
+            <th></th>
+          </tr>
+        </thead>
+        <% @horse.tasks.each do|task| %>
+          <tr>
+            <td><%= task.name%></td>
+            <td><%= task.description %></td>
+            <td><%= task.duedate %></td>
+            <td>
+              <div class="btn-group btn-group-xs">
+                <%= link_to 'Edit', edit_task_path(task), remote: true, class: "btn btn-default" %>  
+                <%= link_to 'Delete', task, data: { confirm: "Are you sure you wish to delete this task?" },
+                                                         method: :delete, class: "btn btn-default" %>
+              </div>
+            </td>  
+          </tr>
+        <% end %>
+      </table>
     </div>
   </div>
 </div>
-</table>

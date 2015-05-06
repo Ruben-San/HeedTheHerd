@@ -7,17 +7,24 @@
   .col-xs-10 {
     width: 100%;
   }
+  .notice {
+    color: white;
+    padding-bottom: 0px;
+    margin-top: white;
+  }
+  .allert {
+    color: white;
+    padding-bottom: 0px;
+    margin-top: white;
+  }
+  .nav.navbar-nav {
+    margin-top: 45px; 
+  }
 </style>
 
 
 <div class="row">
-<!--   <div class="col-xs-10">
-    <%= image_tag("heed_the_herd_logo.png") %><br>
-</div> -->
-<div class="col-xs-2">
-<!--   <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p> --> 
-  </div>
+
 </div>
 <nav class="navbar navbar-default" role="navigation" >
   <div class="container-fluid">
@@ -57,13 +64,16 @@
             <li><%= link_to "Sign up", new_user_registration_path %></li>
             <li><%= link_to "Sign in", new_user_session_path %></li>
             <% end %>
-            <% if user_signed_in? %>  
+<!--             <% if user_signed_in? %>  
             <li class="divider"></li>
             <li><%= link_to "Your Barn", profile_path %></li>
-            <% end %>
+            <% end %> -->
           </ul>
         </li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
+
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p> 
