@@ -17,6 +17,9 @@
     padding-bottom: 0px;
     margin-top: white;
   }
+  .nav.navbar-nav {
+    margin-top: 45px; 
+  }
 </style>
 
 
@@ -61,10 +64,10 @@
             <li><%= link_to "Sign up", new_user_registration_path %></li>
             <li><%= link_to "Sign in", new_user_session_path %></li>
             <% end %>
-            <% if user_signed_in? %>  
+<!--             <% if user_signed_in? %>  
             <li class="divider"></li>
             <li><%= link_to "Your Barn", profile_path %></li>
-            <% end %>
+            <% end %> -->
           </ul>
         </li>
       </ul>
@@ -73,5 +76,4 @@
 </nav>
 
 <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p> 
-
+<p class="alert"><%= alert %></p> 
