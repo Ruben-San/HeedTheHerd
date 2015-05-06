@@ -2,18 +2,27 @@
 <html>
 <head>
   <title>HeedTheHerd</title>
+  <link href='https://fonts.googleapis.com/css?family=Walter+Turncoat' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
-
 </head>
 <body>
-  <%= render 'layouts/header' %>
-
-  <div class="container"> 
-    <%= yield %>
+  <div id="header">
+    <%= render 'layouts/header' %>
   </div>
-  
-  <%= render 'layouts/footer' %>
+
+  <div id="content">
+    <div class="container"> 
+      <%= yield %>
+    </div>
+  </div>
+
+  <div id="push"></div>
+
+  <div id="footer">
+    <%= render 'layouts/footer' %>
+  </div>
+
 </body>
 </html>
