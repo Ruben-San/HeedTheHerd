@@ -1,3 +1,4 @@
+<div class="container" id="contact"> 
 <h2> Contact us: </h2>
 <%= form_for @message, url: contact_path do |message_form| %>
   <fieldset>
@@ -10,13 +11,14 @@
     </div>
     
     <div class="form-group">
-      <%= message_form.text_area :content, placeholder: "Message", :class => "form-control input-lg"%>
+      <%= message_form.text_area :content, placeholder: "Message", :class => "form-control input-lg", :rows => 10%>
     </div>
   </fieldset>
   
   <fieldset>
     <div class="form-group">
-      <%= message_form.submit "Send", :class =>"form-control", :class => "btn btn-default btn-lg" %>
+      <%= message_form.submit "Send", :class =>"form-control", :class => "btn btn-default btn-lg btn-block" %>
     </div>
   </fieldset>
 <% end %>
+</div>
