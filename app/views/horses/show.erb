@@ -38,7 +38,6 @@
       <h1><%= @horse.name %></h1>
         <%= image_tag @horse.pic.url(:medium) %>
       <ul>
-        <!-- <li><%= @horse.name %></li> -->
         <li>Breed: <%= @horse.breed %></li>
         <li>Height: <%= @horse.height%></li>
         <li>Weight: <%= @horse.horse_weights.last.weight if @horse.horse_weights.any? %></li>
